@@ -13,7 +13,7 @@ export default class StarWarsApi {
     }
 
     async getList() {
-        return this.getResource(this._model);
+        return this.getResource(this._model).then((json) => json.results);
     }
 
     async getById(id) {
