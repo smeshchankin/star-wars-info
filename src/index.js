@@ -1,12 +1,12 @@
-import People from './services/people';
+import Person from './services/person';
 import Planet from './services/planet';
 import Starship from './services/starship';
 
-test(new People().getById(1));
-test(new Planet().getById(1));
-test(new Starship().getById(2));
+testOne(new Person().getById(3));
+testOne(new Planet().getById(1));
+testOne(new Starship().getById(2));
 
-function test(promise) {
+function testOne(promise) {
     promise
         .then((data) => console.log(data))
         .catch((err) => console.error(err));
