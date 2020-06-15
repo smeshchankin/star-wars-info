@@ -1,4 +1,6 @@
 export default class StarWarsApi {
+    model = 'undefined';
+
     async getResource(url) {
         const urlPrefix = 'https://swapi.dev/api/'; // 'https://smeshchankin.github.io/swapi/api/'
         const urlSuffix = '/'; // '.json'
@@ -9,4 +11,12 @@ export default class StarWarsApi {
         }
         return await res.json();
     }
-};
+
+    async getList() {
+        return this.getResource(this.model);
+    }
+
+    async getById(id) {
+        return this.getResource(this.model + '/' + id);
+    }
+}
